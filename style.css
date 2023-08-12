@@ -1,0 +1,648 @@
+
+/* fixed that weird white space that showed up on the right side. 
+   also added "overflow-y: scroll;" which makes the scrollbar always there
+   helped fix an issue where the center would shift with/wo the bar*/
+html
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+	overflow-y: scroll;
+}
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+}
+
+/* removing the nasty default margin around the page */
+.main { 
+  padding: 0px;  
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 7%;
+  margin-left: 7%;
+}
+
+
+h1 {
+ font-family: courier;
+ font-size: 42px;
+ color: #343434;
+ letter-spacing: 0.5px;
+ margin: 0px;
+ padding-bottom: 20px;
+ font-weight: 400;
+}
+
+h2 {
+ font-family: courier;
+ font-size: 20px;
+ color: #262626;
+ letter-spacing: 0.5px;
+ margin: 0px;
+ font-weight: 400;
+ line-height: 1.5;
+}
+
+p {
+ font-family: courier;
+ font-size: 16px;
+ color: #696969;
+ letter-spacing: 0.5px;
+ margin: 0px;
+ font-weight: 400;
+ line-height: 1.5;
+}
+
+
+
+
+/* IDK WHY BUT THIS CODE BEING AT THE BOTTOM MAKES IT NOT WORK WTF.
+   needa tidy it up later but I'm leaving it up here for now. (4/28)
+   
+   THIS IS THE CODE FOR THE ART DETAIL PAGES, text on left + art on right (grid a and b)
+   ~
+   this makes it be two columns of text and images
+   as long as the screen is above 952 pixels wide. */
+
+@media screen and (min-width: 952px) {
+	.layout {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	  grid-gap: 3%;
+	  margin: 10px 2%;
+	}
+
+	.text-column {
+	  grid-column: 1 / 2;
+	  padding-top: 0px;
+	  padding-left: 2%;
+	  padding-bottom: 100px;
+	}
+
+	.image-column {
+	  grid-column: 2 / 5;
+	  max-width: 100%;
+	  justify-self: center;
+
+	}
+
+	.header-left {
+	  padding-bottom: 100px;
+	  padding-top: 30px;
+	}
+
+	.fixed {
+	  position: sticky;
+	  top: 50px;
+	  width: 100%;
+	}
+
+	.awards {
+	  padding-bottom: 10%;
+	  padding-top: 6%;
+	}
+
+
+
+
+}
+
+
+.awards {
+	color: #696969;
+	text-align: center;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.awards a {
+	text-decoration: none;
+	color: #696969;
+}
+
+.text-column a {
+	text-decoration: none;
+	color: #696969;
+}
+
+
+/* (4/30) the following values make grid b fit 3 images per row under tall 1000x1333 3x4-proportioned images 
+   and have 2 images for a second at 640 width screens/mobile.
+   change as needed! this is just what I tested for vertical 3x4 images. 
+   
+   (8/8) added grids c and d! these were made specifically for Like Me's detail images. 
+	grid c makes the main detail image be two-columned at full screen, then single-comlumn at mobile sizes (640 specifically)
+    grid d makes the bottom detail images a three-column at full, then turn into two-columns when shrunken 
+	when using just grids c and d tho, make sure to give grid a the filler image lmao. that's me brute forcing. srryyy. */
+
+.grid-a {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1000px));
+  grid-gap: 4px;
+  padding-bottom: 4px;
+}
+
+.grid-b {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 4px;
+  padding-bottom: 4px;
+}
+
+.grid-c {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 4px;
+  padding-bottom: 4px;
+}
+
+.grid-d {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 4px;
+  padding-bottom: 4px;
+}
+
+
+.image-column img{
+  width: 100%;
+  height: auto;
+}
+
+.video {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+iframe {
+  position: absolute;
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+}
+
+
+/* switching to single column for text and images
+   once the image size starts breaking lol */
+@media screen and (max-width: 951px) and (min-width: 642px) {
+	.layout {
+	  grid-template-columns: 1fr;
+	  padding-top: 30px;
+    }
+	.fixed {
+	  display: flex;
+	  gap: 30px;
+	  padding-bottom: 50px;
+	}
+
+	.header-left {
+	  width: 30%;
+	}
+
+	.para-right {
+	  width: 70%;
+	}
+
+	.grid-b {
+	  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	}
+
+
+/* (8/8) this makes grid c behave like grid a when the screen width is less than 951px. 
+	itmade specifically for Like Me '*/
+	.grid-c {
+	  grid-template-columns: repeat(auto-fit, minmax(100px, 1000px));
+	}
+
+
+	.awards {
+	  padding-bottom: 12%;
+	  padding-top: 8%;
+	}
+
+}
+
+/* removing all margins/padding for images and adding margins for text 
+   once the screen is mobile size */
+@media screen and (max-width: 642px) {
+	.text-column {
+	  padding-top: 30px;
+	  padding-left: 30px;
+	  padding-right: 30px;
+	  padding-bottom: 50px;
+	}
+
+	h2 {
+	  padding-bottom: 50px;
+	}
+
+	.image-column {
+	margin: 0px 0px;
+	}
+
+	.grid-a {
+	  grid-gap: 2px;
+	  padding-bottom: 2px;
+	}
+
+	.grid-b {
+	  grid-gap: 2px;
+	  padding-bottom: 2px;
+	  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	}
+
+	.grid-c {
+	  grid-gap: 2px;
+	  padding-bottom: 2px;
+	  grid-template-columns: repeat(auto-fit, minmax(100px, 1000px));
+	}
+
+	.grid-d {
+	  grid-gap: 2px;
+	  padding-bottom: 2px;
+	  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	}
+
+	.awards {
+	  padding-bottom: 15%;
+	  padding-top: 9%;
+	}
+
+
+}
+
+
+
+
+
+
+/* NEED TO EDIT. below makes the images fade in from white at the start!
+   position relative helps make the text fading in on hover work! 
+   (4/26) separated them to make it a little more organized. 
+   renamed image to fadein and put it on "main" which holds all the main elements*/
+
+
+/* turning off in the meantime while I test.
+.fadein {
+    animation: fadein 1.25s;
+}
+*/
+
+.image {
+	position: relative;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+
+
+
+
+
+
+/* RESPONSIVE GRID LAYOUT!
+making the container with all the images (row) flexible (flex and wrap). */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+}
+/* create four equal columns (thanks to the 25% value) that sits next to each other. */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 0px;
+}
+/* editing the images themselves inside the columns, makes that scuffed white margin lmao. */
+.column img {
+  padding: 1.5px;
+  vertical-align: middle;
+  width: 99%;
+}
+
+/* responsive layout - makes a THREE column-layout instead of four columns. 
+(4/25)
+BUT THEN I REMOVED IT IM SORRY.
+columns need to be an even number, having 3 columns makes the first one really long :(
+@media screen and (max-width: 1800px) {
+  .column {
+    flex: 33.33%;
+    max-width: 33.33%;
+  }
+}
+*/
+
+/* responsive layout - TWO COLUMNS */
+@media screen and (max-width: 1200px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+/* responsive layout - ONE COLUMN
+also removes side margins! 
+also removes the thin white line padding!*/
+@media screen and (max-width: 640px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+  .main {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .column img {
+    padding: 0px;
+    vertical-align: middle;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+/* INTERACTING WITH IMAGES!
+im so happy, shit is working ;o; vini helped so much with the hover transitions. 
+i feel so so thankful and so so accomplished. (7/14/2022)
+
+hovering over the image (specifically within row and column), makes image change). */
+.row .column img:hover {
+	z-index: 100;
+	transform: scale(1.01);
+	/*opacity: 50%;*/
+	filter: brightness(40%) grayscale(100%);
+}
+
+/* hovering over the image shows text!
+"when hovering over image, affect text in the following ways."
+affects text: makes 1.01 bigger, opacity becomes 1 (text has an ease transition further below).
+pointer events makes it so that the mouse doesn't turn into an "I" over the text, when mouse is over the image. */
+.row .column .image:hover .image-text {
+	transform: scale(1.01);
+	opacity: 1;
+	pointer-events: none;
+}
+
+.image-text {
+	color: white;
+	font-family: courier;
+	font-size: 28px;
+	font-weight: 500;
+	opacity: 0;
+	position: absolute;
+	top: 45%;
+	width: 100%;
+	text-align: center;
+	transition: 0.3s ease;
+}
+
+
+
+
+
+
+/* HEADER.NAVBAR THINGS! 
+deparately trying to make the logo stay centered lol ahhh.
+(4/25) FINALLY DID IT, JESUS CHRIST. 
+I had to give the "navbar" class (the one that holds the logo and menu buttons) "text align:center"
+and give the .logo... stuff just below the "img" thing, so it directly affects the image. 
+brb screaming, this took me hours.
+anyway.
+width makes sure it fills the parent container "navbar"
+max and min width give it its biggest and smallest size. I think the source image is ~900 px wide.
+*/
+
+.logo img{
+	width: 100%;
+	margin: 0.75em 0px;
+	max-width: 280px;
+	min-width: 150px;
+}
+
+.navbar {
+	text-align: center;
+	padding-bottom: 1.25em;
+}
+
+
+
+
+
+
+
+
+
+/* MENU BUTTON STUFF!!!! */
+
+/* OKAY. so this makes the buttons space apart evenly.
+   "flex" makes it space out plus...
+   "space-around" vs. "space-between" will gives different spacing effects.
+   also I understand padding now! first # is top/bottom, second is sides! */
+
+
+   	.buttons {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		font-family: courier;
+		letter-spacing: 0.75px;
+		font-size: 18px;
+		margin: 0px -2.5em;
+	}
+
+	.buttons a {
+		padding: 10px 20px;
+	}
+
+@media screen and (min-width: 1024px) {
+
+/* to make the menu buttons at the top be further/closer change the padding em value below */
+	.button {
+		flex-basis: calc(100% / 6);
+		flex: 1;
+		margin: 10px;
+		padding: 2px 2em;
+		text-align: center;
+		min-width: 220px;
+	}
+
+	.buttons-dropdown {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1023px) {
+  /* drop-down menu stuff */
+
+  .buttons-grid {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 220px;
+    list-style-type: none;
+    padding: 0;
+	z-index: 999;
+  }
+
+
+  .menu > li > a {
+    background: #696969;
+    color: white;
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+	cursor: pointer; /* Add cursor: pointer to indicate clickable */
+  }
+
+  .menu > li > ul.dropdown {
+    background: #696969;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    transition: all .2s ease;
+    top: 40px;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+  }
+
+
+  .menu > li:hover > ul.dropdown,
+  .menu > li > a:focus + ul.dropdown {
+    height: auto;
+    opacity: 1;
+	padding-top: 10px;
+  }
+
+  .menu ul a {
+    color: white;
+	opacity: 1;
+    display: block;
+    padding: 20px 30px;
+	text-decoration: none;
+  }
+
+}
+
+
+
+
+/* responsive layout - making the buttons a column when it's too narrow. 
+   (4/28) technically don't need anymore bc you have the menu button now. remoooved...
+@media screen and (max-width: 640px) {
+	.buttons {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.buttons .button {
+		margin-bottom: 0.5em;
+	}
+	.navbar {
+		padding-bottom: 3em;
+	}
+}
+*/
+
+
+
+
+
+
+/* styling links!
+makes it fade to a darker color on hover, and turn the underline from white to black. 
+"a" refers to all the clickable links at the top.
+"button-current" is the non-clickable current link.*/
+
+
+
+@media screen and (min-width: 1024px) {
+	.buttons a {
+		text-decoration: none;
+		color: #696969;
+	}
+	.button-current a {
+		color: white;
+		background-color: #696969;
+	}
+	/* hover styling. */
+	.buttons a:hover {
+		color: white;
+		background-color: #696969;
+		transition: 0.2s;
+	}
+	/* styling links!
+	makes it fade to a darker color on hover, and turn the underline from white to black. 
+	"a" refers to all the clickable links at the top.
+	"button-current" is the non-clickable current link.*/
+	z:hover {
+		color: white;
+		transition: 0.2s;
+	}
+}
+
+
+/* (4/28) WIP tryna make the dropdown menu buttons do stuff when you highlight them*/
+@media screen and (max-width: 1023px) {
+	.buttons a {
+		background-color: #696969;
+	}
+	.button-current a {
+		background-color: #505050;
+	}
+	/* hover styling. */
+	.buttons a:hover {
+		background-color: #505050;
+	}
+	/* styling links!
+	makes it fade to a darker color on hover, and turn the underline from white to black. 
+	"a" refers to all the clickable links at the top.
+	"button-current" is the non-clickable current link.*/
+	z:hover {
+		color: #505050;
+		transition: 0.2s;
+	}
+
+}
+
+
+
+
+/* dawg in the corner lol. */
+.floatingdawg {
+	position: fixed;
+	bottom: 2%;
+	right: 1%;
+}
+
+
+
+/*
+.video {
+	display: flex;
+	flex-direction: column;
+  	align-items: center;
+}
+*/
+

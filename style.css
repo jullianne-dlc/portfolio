@@ -584,6 +584,21 @@ max and min width give it its biggest and smallest size. I think the source imag
 	text-decoration: none;
   }
 
+  /* (8/14) new stuff chatGPT stuff I'm adding.
+	in conjunction with new javascript stuff, this should improve menu button functionality on mobile.
+  */
+  
+    /* Hide the dropdown menu by default */
+	.menu > li > ul.dropdown {
+		display: none;
+	}
+
+   /* Show the dropdown when the menu button is clicked */
+	.menu-button-active .menu > li > ul.dropdown {
+		display: block;
+	}
+
+
 }
 
 

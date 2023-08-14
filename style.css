@@ -180,12 +180,31 @@ p {
   padding-bottom: 56.25%;
 }
 
-iframe {
+.video iframe {
   position: absolute;
   width: 100%;
   max-width: 1000px;
   height: 100%;
 }
+
+/* (8/13) the following makes the sketchfab iframe viewer thingy work properly. 
+	thanks chatGPT. '*/
+
+.sketchfab-embed-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 60%; /* Adjust this value to control the aspect ratio */
+}
+
+.sketchfab-embed-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
 
 
 /* switching to single column for text and images

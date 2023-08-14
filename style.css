@@ -323,10 +323,6 @@ p {
     animation: fadein 0.5s;
 }
 
-.image {
-	position: relative;
-}
-
 @keyframes fadein {
     from {
         opacity:0;
@@ -336,6 +332,12 @@ p {
     }
 }
 */
+
+
+.image {
+	position: relative;
+}
+
 
 
 /* Apply initial transparency to the div elements */

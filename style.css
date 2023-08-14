@@ -302,16 +302,17 @@ p {
 
 
 /* NEED TO EDIT. below makes the images fade in from white at the start!
+
    position relative helps make the text fading in on hover work! 
    (4/26) separated them to make it a little more organized. 
    renamed image to fadein and put it on "main" which holds all the main elements*/
 
 
-/* turning off in the meantime while I test.
+/* turning off in the meantime while I test.*/
 .fadein {
-    animation: fadein 1.25s;
+    animation: fadein 0.5s;
 }
-*/
+
 
 .image {
 	position: relative;

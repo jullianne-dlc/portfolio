@@ -304,15 +304,24 @@ p {
 /* NEED TO EDIT. below makes the images fade in from white at the start!
 
    position relative helps make the text fading in on hover work! 
-   (4/26) separated them to make it a little more organized. 
-   renamed image to fadein and put it on "main" which holds all the main elements*/
+   (4/26) separated them to make it a little more organized. */
 
 
-/* turning off in the meantime while I test.*/
+/* turning off in the meantime while I test.
+
+
+	(8/14) turned it back on! hoping it makes the slow load-ins less jarring.
+	just letting you know you can have multiple div classes under eon div tag.
+	so the images in index have a div class "image fadein" 
+	and this gives it both image, and fadein separately because there's a space. 
+	I didn't know that at first lol. that's why just below here there's a "fadein" thingy.
+	without needing the "image" part.
+	feel free to put "fadein" on any div that you want to fade in. */
+
+/*
 .fadein {
     animation: fadein 0.5s;
 }
-
 
 .image {
 	position: relative;
@@ -326,9 +335,19 @@ p {
         opacity:1;
     }
 }
+*/
 
 
+/* Apply initial transparency to the div elements */
+.image.fadein {
+  opacity: 0;
+}
 
+/* Apply the fade-in transition to the div elements */
+.image.fadein.fadein-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
 
 
 

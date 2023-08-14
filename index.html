@@ -9,6 +9,21 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Homepage</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		  const fadeDivs = document.querySelectorAll(".image.fadein");
+
+		  fadeDivs.forEach(function(div) {
+			const img = div.querySelector("img");
+
+			img.addEventListener("load", function() {
+			  div.classList.add("fadein-active");
+			});
+		  });
+		});
+   </script>
+
 </head>
 
 

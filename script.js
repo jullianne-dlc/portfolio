@@ -1,11 +1,13 @@
 // JavaScript source code
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Get all images with the fade-in-image class
-  const images = document.querySelectorAll(".image");
+  const fadeDivs = document.querySelectorAll(".image.fadein");
 
-  // Add a class to trigger the fade-in animation for each image
-  images.forEach(function(image) {
-    image.classList.add("fade-in");
+  fadeDivs.forEach(function(div) {
+    const img = div.querySelector("img");
+
+    img.addEventListener("load", function() {
+      div.classList.add("fadein-active");
+    });
   });
 });

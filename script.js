@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (img.style.opacity === "0") {
         img.style.opacity = "1";
       }
-    }, 600);
+    }, 1000);
   });
 
   //not working, removing in the meantime

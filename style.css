@@ -401,6 +401,7 @@ also removes the thin white line padding!*/
   .column {
     flex: 100%;
     max-width: 100%;
+	padding: 0px;
   }
   .main {
     margin-right: 0px;

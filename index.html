@@ -8,38 +8,6 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Homepage</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
-
-	<script>
-		//javascript stuff
-		//script for fade-in effect on images with div fadein:
-		document.addEventListener("DOMContentLoaded", function() {
-		  const fadeDivs = document.querySelectorAll(".image.fadein");
-
-		  fadeDivs.forEach(function(div) {
-			const img = div.querySelector("img");
-
-			img.addEventListener("load", function() {
-			  div.classList.add("fadein-active");
-			});
-		  });
-		});
-		//not working, removing in the meantime
-		// new script for mobile dropdown menu:
-		//const menuButton = document.getElementById("menu-button");
-		//const menu = document.querySelector(".menu");
-
-		//menuButton.addEventListener("click", function() {
-		//  menu.classList.toggle("menu-button-active");
-		//});
-
-		// close the dropdown menu when clicking outside:
-		//document.addEventListener("click", function(event) {
-		//  if (!menu.contains(event.target)) {
-		//	menu.classList.remove("menu-button-active");
-		//  }
-		//});
-   </script>
-
 </head>
 
 
@@ -258,6 +226,38 @@
 		</div>
 
 	</div>
+
+
+	<script>
+		//javascript stuff
+		//script for fade-in effect on images with div fadein:
+		document.addEventListener("DOMContentLoaded", function() {
+		  const fadeDivs = document.querySelectorAll(".image.fadein");
+
+		  fadeDivs.forEach(function(div) {
+			const img = div.querySelector("img");
+
+			img.addEventListener("load", function() {
+			  div.classList.add("fadein-active");
+			});
+		  });
+		});
+		//not working, removing in the meantime
+		// new script for mobile dropdown menu:
+		//const menuButton = document.getElementById("menu-button");
+		//const menu = document.querySelector(".menu");
+
+		//menuButton.addEventListener("click", function() {
+		//  menu.classList.toggle("menu-button-active");
+		//});
+
+		// close the dropdown menu when clicking outside:
+		//document.addEventListener("click", function(event) {
+		//  if (!menu.contains(event.target)) {
+		//	menu.classList.remove("menu-button-active");
+		//  }
+		//});
+   </script>
 
 
 </body>

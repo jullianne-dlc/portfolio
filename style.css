@@ -340,8 +340,7 @@ p {
 
 
 
-/* making the fadein transition only work on desktop, 'cause on mobile it doesn't work sometimes ;o; */
-@media screen and (min-width: 1024px) {
+/* fadein stuff ahhhh */
 /* Apply initial transparency to the div elements */
 .image.fadein {
   opacity: 0;
@@ -351,7 +350,7 @@ p {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
-}
+
 
 
 

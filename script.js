@@ -2,16 +2,37 @@
 
 
 document.addEventListener("DOMContentLoaded", function() {
+  // Function to apply the fade-in effect
+  const applyFadeIn = function(div) {
+    const img = div.querySelector("img");
+    if (img.complete && img.style.opacity === "0") {
+      div.classList.add("fadein-active");
+    }
+  };
+
   // Fade-in effect for images with div.fadein
   const fadeDivs = document.querySelectorAll(".image.fadein");
 
   fadeDivs.forEach(function(div) {
     const img = div.querySelector("img");
 
-    img.addEventListener("load", function() {
-      div.classList.add("fadein-active");
-    });
+    if (img.complete) {
+      applyFadeIn(div);
+    } else {
+      img.addEventListener("load", function() {
+        applyFadeIn(div);
+      });
+    }
   });
+
+  // Check for 0 opacity every 1 second
+  const fadeInterval = setInterval(function() {
+    fadeDivs.forEach(function(div) {
+      applyFadeIn(div);
+    });
+  }, 1000);
+});
+
 
   //not working, removing in the meantime
   // Menu button functionality for mobile

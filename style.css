@@ -401,14 +401,10 @@ also removes the thin white line padding!*/
   .column {
     flex: 100%;
     max-width: 100%;
-	padding: 0px;
   }
   .main {
     margin-right: 0px;
     margin-left: 0px;
-	padding-right: 0px;
-	padding-left: 0px;
-
   }
   .column img {
     padding: 0px;

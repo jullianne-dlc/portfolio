@@ -1,14 +1,7 @@
 // JavaScript source code
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Function to apply the fade-in effect
-  const applyFadeIn = function(div, img) {
-    if (img.style.opacity === "0") {
-      div.classList.add("fadein-active");
-      clearInterval(fadeInterval); // Stop checking once the fade-in effect is applied
-    }
-  };
 
+document.addEventListener("DOMContentLoaded", function() {
   // Fade-in effect for images with div.fadein
   const fadeDivs = document.querySelectorAll(".image.fadein");
 
@@ -16,18 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const img = div.querySelector("img");
 
     img.addEventListener("load", function() {
-      applyFadeIn(div, img);
+      div.classList.add("fadein-active");
     });
   });
-
-  // Check for 0 opacity every 1 second
-  const fadeInterval = setInterval(function() {
-    fadeDivs.forEach(function(div) {
-      const img = div.querySelector("img");
-      applyFadeIn(div, img);
-    });
-  }, 1000);
-});
 
   //not working, removing in the meantime
   // Menu button functionality for mobile
@@ -44,4 +28,4 @@ document.addEventListener("DOMContentLoaded", function() {
   //    menu.classList.remove("menu-button-active");
   //  }
   //});
-
+});

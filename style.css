@@ -650,7 +650,7 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 }
 
 
-/* (4/28) WIP tryna make the dropdown menu buttons do stuff when you highlight them*/
+/* (4/28) WIP tryna make the dropdown menu buttons do stuff when you highlight them */
 @media screen and (max-width: 1023px) {
 	.buttons a {
 		background-color: #696969;

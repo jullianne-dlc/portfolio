@@ -10,12 +10,11 @@
 	<link rel="stylesheet" type="text/css" href="style.css" />
 
 	<script>
-		//javascript stuff
 		document.addEventListener("DOMContentLoaded", function() {
 		  // Function to apply the fade-in effect
 		  const applyFadeIn = function(div) {
 			const img = div.querySelector("img");
-			if (img.complete && img.style.opacity === "0") {
+			if (img.complete) {
 			  div.classList.add("fadein-active");
 			}
 		  };
@@ -24,23 +23,13 @@
 		  const fadeDivs = document.querySelectorAll(".image.fadein");
 
 		  fadeDivs.forEach(function(div) {
+			applyFadeIn(div);
+
 			const img = div.querySelector("img");
-
-			if (img.complete) {
-			  applyFadeIn(div);
-			} else {
-			  img.addEventListener("load", function() {
-				applyFadeIn(div);
-			  });
-			}
-		  });
-
-		  // Check for 0 opacity every 1 second
-		  const fadeInterval = setInterval(function() {
-			fadeDivs.forEach(function(div) {
+			img.addEventListener("load", function() {
 			  applyFadeIn(div);
 			});
-		  }, 1000);
+		  });
 		});
    </script>
 

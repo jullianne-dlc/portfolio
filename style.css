@@ -61,6 +61,7 @@ p {
 
 
 
+
 /* ART DETAILS PAGES */
 
 /* IDK WHY BUT THIS CODE BEING AT THE BOTTOM MAKES IT NOT WORK WTF.
@@ -89,7 +90,6 @@ p {
 	  grid-column: 2 / 5;
 	  max-width: 100%;
 	  justify-self: center;
-
 	}
 
 	.header-left {
@@ -107,7 +107,6 @@ p {
 	  padding-bottom: 10%;
 	  padding-top: 6%;
 	}
-
 }
 
 
@@ -166,7 +165,6 @@ p {
   padding-bottom: 4px;
 }
 
-
 .image-column img{
   width: 100%;
   height: auto;
@@ -213,6 +211,7 @@ p {
 	  grid-template-columns: 1fr;
 	  padding-top: 30px;
     }
+
 	.fixed {
 	  display: flex;
 	  gap: 30px;
@@ -417,7 +416,7 @@ also removes the thin white line padding!*/
 
 
 
-/* INTERACTING WITH IMAGES!
+/* INTERACTING WITH IMAGES! (INDEX)
 
 im so happy, shit is working ;o; vini helped so much with the hover transitions. 
 i feel so so thankful and so so accomplished. (7/14/2022)
@@ -515,7 +514,7 @@ max and min width give it its biggest and smallest size. I think the source imag
 		padding: 10px 20px;
 	}
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
 
 /* to make the menu buttons at the top be further/closer change the padding em value below */
 	.button {
@@ -651,7 +650,7 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 
 
 /* (4/28) WIP tryna make the dropdown menu buttons do stuff when you highlight them */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
 	.buttons a {
 		background-color: #696969;
 	}
@@ -675,3 +674,58 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 
 
 
+/* ABOUT ME */ 
+
+/* Container for the entire about me section */
+.aboutme-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5% 10%;
+}
+
+/* Flex layout to arrange image and text side by side */
+.aboutme-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Style for the image */
+.aboutme-image {
+  flex-basis: 40%;
+  padding-right: 75px; /* Add some spacing between image and text */
+}
+
+/* Style for the image itself */
+.aboutme-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style for the text */
+.aboutme-text {
+  flex-basis: 60%;
+}
+
+
+
+/* Mobile styles */
+@media screen and (max-width: 1024px) {
+  .aboutme-layout {
+    flex-direction: column;
+	padding: 0px 5%;
+  }
+
+  .aboutme-image  {
+	text-align: center;
+	padding-right: 0px; /* Removes the little gap on the right of the image, makes it perfectly centered */
+  }
+
+  .aboutme-image img {
+	max-width: 90%; /* Adjust the image size for mobile */
+	margin-bottom: 50px; /* Add some spacing between image and text */
+  }
+
+
+}

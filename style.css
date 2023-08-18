@@ -297,33 +297,6 @@ p {
 
 
 
-/* NEED TO EDIT. below makes the images fade in from white at the start!
-
-/* turning off in the meantime while I test.
-
-
-	(8/14) turned it back on! hoping it makes the slow load-ins less jarring.
-	just letting you know you can have multiple div classes under eon div tag.
-	so the images in index have a div class "image fadein" 
-	and this gives it both image, and fadein separately because there's a space. 
-	I didn't know that at first lol. that's why just below here there's a "fadein" thingy.
-	without needing the "image" part.
-	feel free to put "fadein" on any div that you want to fade in. */
-
-/*
-.fadein {
-    animation: fadein 0.5s;
-}
-
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-*/
 
 
 /* FADE IN STUFF AHHHSFUGHSHGFOUSGF */
@@ -338,7 +311,24 @@ p {
   transition: opacity 0.5s ease-in-out;
 }
 
+/* A general fadein you can just slap onto any div*/
+.fadein {
+  animation: fadeInAnimation 0.5s ease-in-out forwards;
+}
 
+
+
+
+
+/* Define the fade-in animation keyframes */
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 
 
@@ -363,18 +353,6 @@ making the container with all the images (row) flexible (flex and wrap). */
   vertical-align: middle;
   width: 99%;
 }
-
-/* responsive layout - makes a THREE column-layout instead of four columns. 
-(4/25)
-BUT THEN I REMOVED IT IM SORRY.
-columns need to be an even number, having 3 columns makes the first one really long :(
-@media screen and (max-width: 1800px) {
-  .column {
-    flex: 33.33%;
-    max-width: 33.33%;
-  }
-}
-*/
 
 /* responsive layout - TWO COLUMNS */
 @media screen and (max-width: 1200px) {
@@ -678,6 +656,7 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 
 /* Container for the entire about me section */
 .aboutme-container {
+  opacity: 0;
   max-width: 1000px;
   margin: 0 auto;
   padding: 5% 10%;
@@ -687,7 +666,7 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 .aboutme-layout {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
@@ -708,6 +687,10 @@ makes it fade to a darker color on hover, and turn the underline from white to b
   flex-basis: 60%;
 }
 
+.aboutme-text h1 {
+  font-size: 20px;
+  padding-bottom: 50px;
+}
 
 
 /* Mobile styles */
@@ -726,6 +709,46 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 	max-width: 90%; /* Adjust the image size for mobile */
 	margin-bottom: 50px; /* Add some spacing between image and text */
   }
+}
 
 
+/* GAMES & 3D, needa fix its late and im tired */ 
+
+.games3D-main {
+  box-sizing: border-box;
+}
+
+.games3D-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.games3D-main-image {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+}
+
+.games3D-main-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.games3D-sub-images {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.games3D-sub-images img {
+  width: calc(33.33% - 10px); /* Adjust the width based on your needs */
+  margin: 5px;
+}
+
+@media screen and (max-width: 640px) {
+  .games3D-sub-images {
+    max-width: 100%;
+  }
 }

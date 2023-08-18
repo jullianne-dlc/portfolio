@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en"
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=4.0, minimum-scale=1.0, user-scalable=yes">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Homepage</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		  // Function to apply the fade-in effect
+		  const applyFadeIn = function(div) {
+			const img = div.querySelector("img");
+			if (img.complete) {
+			  div.classList.add("fadein-active");
+			}
+		  };
+
+		  // Fade-in effect for images with div.fadein
+		  const fadeDivs = document.querySelectorAll(".image.fadein");
+
+		  fadeDivs.forEach(function(div) {
+			applyFadeIn(div);
+
+			const img = div.querySelector("img");
+			img.addEventListener("load", function() {
+			  applyFadeIn(div);
+			});
+		  });
+		});
+   </script>
+
+</head>
+
+
+<body>
+
+
+	<div class="navbar">
+
+		<div class="logo">
+			<a href="index.html"><img src="images/header_logo.gif?v=1" alt="jullianne-dlc"/></a>
+		</div>
+
+		<div class="buttons-grid">
+		<div class="buttons">
+			<div class="button"> <a href="index.html">favorite works</a> </div>
+			<div class="button"> <a href="#.html">illustration</a> </div>
+			<div class="button"> <a href="#.html">animation</a> </div>
+			<div class="button button-current"> <a href="games & 3D.html">games & 3D</a> </div>
+			<div class="button"> <a href="life drawing.html">life drawing</a> </div>
+			<div class="button"> <a href="#.html">commissions</a> </div>
+			<div class="button"> <a href="about me.html">about</a> </div>
+			<div class="button"> <a href="#.html">contact</a> </div>
+			<div class="button"> <a href="#.html">artist cv</a> </div>
+		</div>
+		</div>
+
+
+		<div class="buttons-dropdown">
+		<div class="buttons">
+		<ul class="menu">
+			<li>
+			<a href="#">menu</a>
+				<ul class="dropdown">
+					<li> <div class="button"> <a href="index.html">favorite works</a> </div> </li>
+					<li> <div class="button"> <a href="#.html">illustration</a> </div> </li>
+					<li> <div class="button"> <a href="#.html">animation</a> </div> </li>
+					<li> <div class="button button-current"> <a href="games & 3D.html">games & 3D</a> </div> </li>
+					<li> <div class="button"> <a href="life drawing.html">life drawing</a> </div> </li>
+					<li> <div class="button"> <a href="#.html">commissions</a> </div> </li>
+					<li> <div class="button"> <a href="about me.html">about</a> </div> </li>
+					<li> <div class="button"> <a href="#.html">contact</a> </div> </li>
+					<li> <div class="button"> <a href="#.html">artist cv</a> </div> </li>
+				</ul>
+			</li>
+		</ul>
+		</div>
+		</div>
+
+
+	</div>
+
+
+
+
+	<div class="games3D-main">
+
+		<div class="games3D-container">
+
+			<div class="games3D-main-image">
+				<img src="images/details/shrimp_1.gif" alt="">
+			</div>
+
+			<div class="games3D-sub-images">
+				<img src="images/details/shrimp_2.jpg" alt="">
+				<img src="images/details/shrimp_3.jpg" alt="">
+				<img src="images/details/shrimp_4.jpg" alt="">
+			</div>
+
+		</div>
+
+	</div>
+
+
+</body>
+
+
+</html>

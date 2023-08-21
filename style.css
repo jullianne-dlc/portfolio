@@ -714,6 +714,7 @@ makes it fade to a darker color on hover, and turn the underline from white to b
   .aboutme-layout {
     flex-direction: column;
 	padding: 0px 5%;
+	align-items: center;
   }
 
   .aboutme-image  {

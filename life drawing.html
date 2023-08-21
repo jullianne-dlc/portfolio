@@ -4,34 +4,59 @@
 
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport"
-		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=scale1.0, minimum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=4.0, minimum-scale=1.0, user-scalable=yes">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Homepage</title>
+	<title>Life Drawing</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		  // Function to apply the fade-in effect
+		  const applyFadeIn = function(div) {
+			const img = div.querySelector("img");
+			if (img.complete) {
+			  div.classList.add("fadein-active");
+			}
+		  };
+
+		  // Fade-in effect for images with div.fadein
+		  const fadeDivs = document.querySelectorAll(".image.fadein");
+
+		  fadeDivs.forEach(function(div) {
+			applyFadeIn(div);
+
+			const img = div.querySelector("img");
+			img.addEventListener("load", function() {
+			  applyFadeIn(div);
+			});
+		  });
+		});
+   </script>
+
 </head>
+
 
 <body>
 
-	<div class="main fadein">
+	<div class="main">
 
 		<div class="navbar">
 
 			<div class="logo">
-				<a href="index.html"><img src="images/header_logo.gif" alt="jullianne-dlc"/></a>
+				<a href="index.html"><img src="images/header_logo.gif?v=1" alt="jullianne-dlc"/></a>
 			</div>
 
 			<div class="buttons-grid">
 			<div class="buttons">
 				<div class="button"> <a href="index.html">favorite works</a> </div>
-				<div class="button"> <a href="#.html">illustration</a> </div>
-				<div class="button"> <a href="#.html">animation</a> </div>
-				<div class="button"> <a href="#.html">games & 3D</a> </div>
+				<div class="button"> <a href="illustration.html">illustration</a> </div>
+				<div class="button"> <a href="animation.html">animation</a> </div>
+				<div class="button"> <a href="games & 3D.html">games & 3D</a> </div>
 				<div class="button button-current"> <a href="life drawing.html">life drawing</a> </div>
-				<div class="button"> <a href="#.html">commissions</a> </div>
-				<div class="button"> <a href="#.html">about</a> </div>
-				<div class="button"> <a href="#.html">contact</a> </div>
-				<div class="button"> <a href="#.html">artist cv</a> </div>
+				<div class="button"> <a href="commissions.html">commissions</a> </div>
+				<div class="button"> <a href="about me.html">about</a> </div>
+				<div class="button"> <a href="contact.html">contact</a> </div>
+				<div class="button"> <a href="artist cv.html">artist cv</a> </div>
 			</div>
 			</div>
 
@@ -40,17 +65,17 @@
 			<div class="buttons">
 			<ul class="menu">
 				<li>
-				<a href="index.html">menu</a>
+				<a href="#">menu</a>
 					<ul class="dropdown">
 						<li> <div class="button"> <a href="index.html">favorite works</a> </div> </li>
-						<li> <div class="button"> <a href="#">illustration</a> </div> </li>
-						<li> <div class="button"> <a href="#">animation</a> </div> </li>
-						<li> <div class="button"> <a href="#">games & 3D</a> </div> </li>
-						<li> <div class="button button-current"> <a href="life drawing">life drawing</a> </div> </li>
-						<li> <div class="button"> <a href="#">commissions</a> </div> </li>
-						<li> <div class="button"> <a href="#">about</a> </div> </li>
-						<li> <div class="button"> <a href="#">contact</a> </div> </li>
-						<li> <div class="button"> <a href="#.html">artist cv</a> </div> </li>
+						<li> <div class="button"> <a href="illustration.html">illustration</a> </div> </li>
+						<li> <div class="button"> <a href="animation.html">animation</a> </div> </li>
+						<li> <div class="button"> <a href="games & 3D.html">games & 3D</a> </div> </li>
+						<li> <div class="button button-current"> <a href="life drawing.html">life drawing</a> </div> </li>
+						<li> <div class="button"> <a href="commissions.html">commissions</a> </div> </li>
+						<li> <div class="button"> <a href="about me.html">about</a> </div> </li>
+						<li> <div class="button"> <a href="contact.html">contact</a> </div> </li>
+						<li> <div class="button"> <a href="artist cv.html">artist cv</a> </div> </li>
 					</ul>
 				</li>
 			</ul>
@@ -65,146 +90,154 @@
 		<div class="row">
 
 			<div class="column">
-				<div class="image">
-					<img src="images/a_1.jpg" alt="Unmei Arcade"/>
-					</a>
-					<div class="image-text">Unmei Arcade</div>
+				<div class="image fadein">
+					<img src="images/life drawing/a_1.jpg?v=1" alt="" loading="lazy" width="auto" height="100%"> 
+					<div class="image-text">portrait study<br>(digital)<br>2021</div>
 				</div>
-				<div class="image">
-					<img src="images/a_2.gif" alt=""/>
-					</a>
-					<div class="image-text">Masterpiece Project</div>
+				<div class="image fadein">
+					<img src="images/life drawing/a_2.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">long pose<br>2019</div>
 				</div>
-				<div class="image">
-					<img src="images/a_3.jpg" alt=""/>
-					</a>
-					<div class="image-text">Yobby the Betta Fish</div>
+				<div class="image fadein">
+					<img src="images/life drawing/a_3.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">(digital)<br>2021</div>
 				</div>
-				<div class="image">
-					<img src="images/a_4.gif" alt=""/>
-					</a>
-					<div class="image-text">Robocook</div>
+				<div class="image fadein">
+					<img src="images/life drawing/a_4.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">long pose<br>2022</div>
 				</div>
-				<div class="image">
-					<img src="images/a_5.jpg" alt=""/>
-					</a>
-					<div class="image-text">Plug n' Play</div>
+				<div class="image fadein">
+					<img src="images/life drawing/a_5.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">portrait studies<br>2021</div>
 				</div>
-				<div class="image">
-					<img src="images/a_6.jpg" alt=""/>
-					</a>
-					<div class="image-text">Tip of the Iceberg</div>
+				<div class="image fadein">
+					<img src="images/life drawing/a_6.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">(digital)<br>2021</div>
 				</div>
-			</div>
-
-
-			<div class="column">
-				<div class="image">
-					<img src="images/b_1.gif" alt=""/>
-					</a>
-					<div class="image-text">Soup</div>
+				<div class="image fadein">
+					<img src="images/life drawing/a_7.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">15 minute poses<br>2022</div>
 				</div>
-				<div class="image">
-					<img src="images/b_2.jpg" alt=""/>
-					</a>
-					<div class="image-text">With Love, Robots <br> (Welcome to the World)</div>
-				</div>
-				<div class="image">
-					<img src="images/b_3.jpg" alt=""/>
-					</a>
-					<div class="image-text">With Love, Robots <br> (Storytime)</div>
-				</div>
-				<div class="image">
-					<img src="images/b_4.gif" alt=""/>
-					</a>
-					<div class="image-text">Survive in 5</div>
-				</div>
-				<div class="image">
-					<img src="images/b_5.jpg" alt=""/>
-					</a>
-					<div class="image-text">P-Dawg and Friends</div>
-				</div>
-				<div class="image">
-					<img src="images/b_6.gif" alt=""/>
-					</a>
-					<div class="image-text">Ramen</div>
+				<div class="image fadein">
+					<img src="images/life drawing/a_8.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">long pose<br>2022</div>
 				</div>
 			</div>
 
 
 			<div class="column">
-				<div class="image">
-					<img src="images/c_1.jpg" alt=""/>
-					</a>
-					<div class="image-text">For Josh</div>
+				<div class="image fadein">
+					<img src="images/life drawing/b_1.jpg?v=1" alt="" loading="lazy" width="auto" height="100%"> 
+					<div class="image-text">10 minute poses<br>2022</div>
 				</div>
-				<div class="image">
-					<img src="images/c_2.jpg" alt=""/>
-					</a>
-					<div class="image-text">With Love, Robots <br> (Earth Misses You)</div>
+				<div class="image fadein">
+					<img src="images/life drawing/b_2.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">girl on drapery<br>2019</div>
 				</div>
-				<div class="image">
-					<img src="images/c_3.jpg" alt=""/>
-					</a>
-					<div class="image-text">Matsuri Statue</div>
+				<div class="image fadein">
+					<img src="images/life drawing/b_3.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">(digital)<br>2021</div>
 				</div>
-				<div class="image">
-					<img src="images/c_4.jpg" alt=""/>
-					</a>
-					<div class="image-text">Charon's Isle</div>
+				<div class="image fadein">
+					<img src="images/life drawing/b_4.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">5 minute / 7 minute<br>poses<br>2021</div>
 				</div>
-				<div class="image">
-					<img src="images/c_5.jpg" alt=""/>
-					</a>
-					<div class="image-text">When Bella <br> Lost Her Buzz</div>
+				<div class="image fadein">
+					<img src="images/life drawing/b_5.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">15 minute pose<br>2021</div>
 				</div>
-				<div class="image">
-					<img src="images/c_6.jpg" alt=""/>
-					</a>
-					<div class="image-text">When Bella <br> Lost Her Buzz</div>
+				<div class="image fadein">
+					<img src="images/life drawing/b_6.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">man in thought<br>(digital)<br>2021</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/life drawing/b_7.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">(digital)<br>2021</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/life drawing/b_8.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">5 minute pose<br>2022</div>
+				</div>
+			</div>
+
+			<div class="column">
+				<div class="image fadein">
+					<img src="images/life drawing/c_1.jpg?v=1" alt="" loading="lazy" width="auto" height="100%"> 
+					<div class="image-text">spilled milk<br>2019</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/life drawing/c_2.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">4 minute / 10 minute poses<br>2022</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/life drawing/c_3.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">long pose<br>2022</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/life drawing/c_4.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">10 minute pose<br>2022</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/life drawing/c_5.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">5 minute poses<br>2022</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/life drawing/c_6.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">20 minute pose<br>2022</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/life drawing/c_7.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">15 minute pose<br>2021</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/life drawing/c_8.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">long pose<br>2018</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/life drawing/c_9.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">(digital)<br>2021</div>
 				</div>
 			</div>
 
 
 			<div class="column">
-				<div class="image">
-					<img src="images/d_1.gif" alt=""/>
-					</a>
-					<div class="image-text">Like Me</div>
+				<div class="image fadein">
+					<img src="images/life drawing/d_1.jpg?v=1" alt="" loading="lazy" width="auto" height="100%"> 
+					<div class="image-text">long pose<br>2022</div>
 				</div>
-				<div class="image">
-					<img src="images/d_2.gif" alt=""/>
-					</a>
-					<div class="image-text">#cakeday</div>
+				<div class="image fadein">
+					<img src="images/life drawing/d_2.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">long pose<br>2021</div>
 				</div>
-				<div class="image">
-					<img src="images/d_3.jpg" alt=""/>
-					</a>
-					<div class="image-text">With Love, Robots <br> (Homebound)</div>
+				<div class="image fadein">
+					<img src="images/life drawing/d_3.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">5 minute poses<br>2022</div>
 				</div>
-				<div class="image">
-					<img src="images/d_4.gif" alt=""/>
-					</a>
-					<div class="image-text">The Little Shrimp <br> and the Sea Dragon</div>
+				<div class="image fadein">
+					<img src="images/life drawing/d_4.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">long pose<br>2019</div>
 				</div>
-				<div class="image">
-					<img src="images/d_5.jpg" alt=""/>
-					</a>
-					<div class="image-text">The Abstractifier</div>
+				<div class="image fadein">
+					<img src="images/life drawing/d_5.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">20 minute pose<br>2020</div>
 				</div>
-				<div class="image">
-					<img src="images/d_6.gif" alt=""/>
-					</a>
-					<div class="image-text">Ti Red's Day Off</div>
+				<div class="image fadein">
+					<img src="images/life drawing/d_6.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">long pose<br>2020</div>
 				</div>
-				<div class="image">
-					<img src="images/d_7.jpg" alt=""/>
-					</a>
-					<div class="image-text">805 Rhythm Gaming</div>
+				<div class="image fadein">
+					<img src="images/life drawing/d_7.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">4 minute poses<br>2022</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/life drawing/d_8.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">2 minute poses<br>2021</div>
 				</div>
 			</div>
 
 		</div>
+
+		<br> <br> <br>
 
 	</div>
 

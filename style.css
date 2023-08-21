@@ -312,7 +312,7 @@ p {
 }
 
 /* A general fadein you can just slap onto any div*/
-.fadein {
+.fadein2 {
   animation: fadeInAnimation 0.5s ease-in-out forwards;
 }
 

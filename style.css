@@ -774,3 +774,10 @@ makes it fade to a darker color on hover, and turn the underline from white to b
     max-width: 100%;
   }
 }
+
+
+@media screen and (max-width: 640px) {
+  .under-construction img {
+    max-width: 70%;
+  }
+}

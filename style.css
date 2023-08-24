@@ -105,7 +105,7 @@ p {
 
 	.awards {
 	  padding-bottom: 10%;
-	  padding-top: 6%;
+	  padding-top: 7%;
 	}
 }
 
@@ -247,12 +247,17 @@ p {
 
 /* removing all margins/padding for images and adding margins for text 
    once the screen is mobile size */
-@media screen and (max-width: 642px) {
+@media screen and (max-width: 641px) {
 	.text-column {
 	  padding-top: 35px;
-	  padding-left: 30px;
-	  padding-right: 30px;
+	  padding-left: 35px;
+	  padding-right: 35px;
 	  padding-bottom: 60px;
+	}
+
+	.awards {
+	  padding-bottom: 20%;
+	  padding-top: 15%;
 	}
 
 	h2 {
@@ -285,13 +290,19 @@ p {
 	  padding-bottom: 2px;
 	  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	}
+}
+
+@media screen and (max-width: 720px) and (min-width: 642px) {
+	.text-column {
+	  padding-left: 35px;
+	  padding-right: 35px;
+	}
 
 	.awards {
 	  padding-bottom: 20%;
 	  padding-top: 15%;
 	}
 }
-
 
 
 
@@ -734,7 +745,7 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 }
 
 
-/* GAMES & 3D, needa fix its late and im tired */ 
+/* GAMES & 3D, needa fix its late and im tired 
 
 .games3D-main {
   box-sizing: border-box;
@@ -765,7 +776,7 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 }
 
 .games3D-sub-images img {
-  width: calc(33.33% - 10px); /* Adjust the width based on your needs */
+  width: calc(33.33% - 10px);    Adjust the width based on your needs 
   margin: 5px;
 }
 
@@ -774,6 +785,7 @@ makes it fade to a darker color on hover, and turn the underline from white to b
     max-width: 100%;
   }
 }
+*/ 
 
 
 @media screen and (max-width: 640px) {

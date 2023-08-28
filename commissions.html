@@ -9,6 +9,30 @@
 	<title>Commissions</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		  // Function to apply the fade-in effect
+		  const applyFadeIn = function(div) {
+			const img = div.querySelector("img");
+			if (img.complete) {
+			  div.classList.add("fadein-active");
+			}
+		  };
+
+		  // Fade-in effect for images with div.fadein
+		  const fadeDivs = document.querySelectorAll(".image.fadein");
+
+		  fadeDivs.forEach(function(div) {
+			applyFadeIn(div);
+
+			const img = div.querySelector("img");
+			img.addEventListener("load", function() {
+			  applyFadeIn(div);
+			});
+		  });
+		});
+   </script>
+
 </head>
 
 <body>
@@ -26,11 +50,11 @@
 					<div class="button"> <a href="index.html">favorite works</a> </div>
 					<div class="button"> <a href="illustration.html">illustration</a> </div>
 					<div class="button"> <a href="animation.html">animation</a> </div>
-					<div class="button"> <a href="games & 3D.html">games & 3D</a> </div>
-					<div class="button"> <a href="character design.html">character design</a> </div> </li>
-					<div class="button"> <a href="life drawing.html">life drawing</a> </div>
+					<div class="button"> <a href="games-&-3D.html">games & 3D</a> </div>
+					<div class="button"> <a href="character-design.html">character design</a> </div> 
+					<div class="button"> <a href="life-drawing.html">life drawing</a> </div>
 					<div class="button button-current"> <a href="commissions.html">commissions</a> </div>
-					<div class="button"> <a href="about me.html">about & contact</a> </div>
+					<div class="button"> <a href="about.html">about & contact</a> </div>
 					<div class="button"> <a href="https://drive.google.com/file/d/1EeQAC_52lAP6t2bemzwPDZCW_KwP7SdE/view?usp=sharing" target="_blank" rel="noopener noreferrer">artist cv</a> </div>
 				</div>
 			</div>
@@ -45,11 +69,11 @@
 								<li> <div class="button"> <a href="index.html">favorite works</a> </div> </li>
 								<li> <div class="button"> <a href="illustration.html">illustration</a> </div> </li>
 								<li> <div class="button"> <a href="animation.html">animation</a> </div> </li>
-								<li> <div class="button"> <a href="games & 3D.html">games & 3D</a> </div> </li>
-								<li> <div class="button"> <a href="character design.html">character design</a> </div> </li>
-								<li> <div class="button"> <a href="life drawing.html">life drawing</a> </div> </li>
+								<li> <div class="button"> <a href="games-&-3D.html">games & 3D</a> </div> </li>
+								<li> <div class="button"> <a href="character-design.html">character design</a> </div> </li>
+								<li> <div class="button"> <a href="life-drawing.html">life drawing</a> </div> </li>
 								<li> <div class="button button-current"> <a href="commissions.html">commissions</a> </div> </li>
-								<li> <div class="button"> <a href="about me.html">about & contact</a> </div> </li>
+								<li> <div class="button"> <a href="about.html">about & contact</a> </div> </li>
 								<li> <div class="button"> <a href="https://drive.google.com/file/d/1EeQAC_52lAP6t2bemzwPDZCW_KwP7SdE/view?usp=sharing" target="_blank" rel="noopener noreferrer">artist cv</a> </div> </li>
 							</ul>
 						</li>
@@ -68,22 +92,75 @@
 				<img src="images/under_construction.gif">
 			</div>
 
-			<p> 
-				<br> <br>
-				Oops there's nothing here yet, sorry! Check back later. :P
-				<br>
-				In the meantime, these pages have some cool stuff:
-				<br> <br>
-			</p>
 			<h2>
-				<a href="index.html">"<u>Favorite Works</u>"</a> 
-				<br>
-				<a href="life drawing.html">"<u>Life Drawing</u>"</a> 
-				<br>
-				<a href="about me.html">"<u>About</u>"</a>
+				<br> 
+				Currently closed for commissions!
 			</h2>
-			
+			<p> 
+				<br> 
+				I'm working on a commission pricing page right now, and once it's finished I'll update it here!
+				<br>
+				In the meantime, here are examples of some commissions I've done in the past:
+			</p>
+
 		</div>
+
+
+
+		<div class="row fadein-2">
+
+			<div class="column">
+				<div class="image fadein">
+					<img src="images/commissions/a_1.jpg?v=1" alt="" loading="lazy" width="auto" height="100%"> 
+					<div class="image-text">For Andrew<br>FFXIV Character<br>2023</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/commissions/a_2.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">For Ate<br>FFXIV Character<br>2020</div>
+				</div>
+			</div>
+
+
+			<div class="column">
+				<div class="image fadein">
+					<img src="images/commissions/b_1.jpg?v=1" alt="" loading="lazy" width="auto" height="100%"> 
+					<div class="image-text">For Phoebe<br>Valentine's Gift<br>2023</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/commissions/b_2.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">For Charlene<br>Wedding Cards<br>2020</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/commissions/b_3.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">For HoneyMae<br>Family<br>2020</div>
+				</div>
+			</div>
+
+			<div class="column">
+				<div class="image fadein">
+					<img src="images/commissions/c_1.jpg?v=1" alt="" loading="lazy" width="auto" height="100%"> 
+					<div class="image-text">For Fabian<br>Metal Gear<br>2020</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/commissions/c_2.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">For Grant<br>FFXIV Character<br>2020</div>
+				</div>
+			</div>
+
+
+			<div class="column">
+				<div class="image fadein">
+					<img src="images/commissions/d_1.jpg?v=1" alt="" loading="lazy" width="auto" height="100%"> 
+					<div class="image-text">Social & Racial<br>Justice Flyer<br>2020</div>
+				</div>
+				<div class="image fadein">
+					<img src="images/commissions/d_2.jpg?v=1" alt="" loading="lazy" width="auto" height="100%">
+					<div class="image-text">For Andrew<br>FFXIV Character<br>2020</div>
+				</div>
+
+		</div>
+
+
 
 
 	</div>

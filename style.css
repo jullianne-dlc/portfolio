@@ -793,3 +793,94 @@ makes it fade to a darker color on hover, and turn the underline from white to b
     max-width: 70%;
   }
 }
+
+
+/* NEW PAGE LAYOUT WITH BIG IMAGE AND SUB IMAGES (for games & 3D so far)
+*/ 
+
+.wide-layout {
+  display: grid;
+  grid-template-columns: 2fr 3fr; /* One-third for the big image, two-thirds for the sub-grid */
+  gap: 5px; /* Gap between columns */
+  align-items: stretch; /* Stretch items to the full height of the container */
+  margin-bottom: 20px;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%; /* Make the big image fill the entire height of its container */
+  object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+.sub-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns for the sub-grid */
+  grid-template-rows: repeat(2, 1fr); /* Two rows of equal height */
+  gap: 5px; /* Gap between sub images */
+  align-items: stretch; /* Stretch items to the full height of the container */
+}
+
+.sub-images img {
+  width: 100%;
+  height: 100%; /* Make the sub-grid images fill the entire height of their container */
+  object-fit: cover; /* Ensure the images cover the entire container */
+}
+
+/* Media query for screens 640px or less */
+@media screen and (max-width: 1024px) {
+  .wide-layout {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+    grid-template-rows: auto auto; /* Auto rows */
+    gap: 2.5px;
+  }
+
+  .sub-images {
+    grid-template-columns: repeat(2, 1fr); /* Back to two columns for smaller screens */
+    grid-template-rows: 1fr 1fr; /* Two rows of equal height */
+  }
+}
+
+
+
+
+
+
+
+
+
+.new-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns for the row of big images */
+  gap: 20px; /* Gap between big images */
+  align-items: start; /* Align items at the top */
+}
+
+.main-image2 {
+  position: relative;
+}
+
+.main-image2 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.sub-images2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns for the sub-grid */
+  gap: 10px; /* Gap between sub-grid images */
+  align-items: start; /* Align items at the top */
+}
+
+.sub-images2 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Media query for screens 640px or less */
+@media screen and (max-width: 1024px) {
+  .new-layout {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+  }
+}

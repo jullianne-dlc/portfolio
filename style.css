@@ -686,7 +686,7 @@ makes it fade to a darker color on hover, and turn the underline from white to b
   opacity: 0;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 5% 10%;
+  padding: 3% 10% 3% 6%;
 }
 
 /* Flex layout to arrange image and text side by side */
@@ -699,8 +699,8 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 
 /* Style for the image */
 .aboutme-image {
-  flex-basis: 40%;
-  padding-right: 75px; /* Add some spacing between image and text */
+  flex-basis: 65%;
+  padding-right: 30px; /* Add some spacing between image and text */
 }
 
 /* Style for the image itself */
@@ -711,7 +711,8 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 
 /* Style for the text */
 .aboutme-text {
-  flex-basis: 60%;
+  flex-basis: 35%;
+  padding-top: 75px;
 }
 
 .aboutme-text h1 {
@@ -727,6 +728,13 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 
 /* Mobile styles */
 @media screen and (max-width: 1024px) {
+  .aboutme-container {
+    opacity: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3% 10% 6% 10%;
+  }
+
   .aboutme-layout {
     flex-direction: column;
 	padding: 0px 5%;
@@ -739,8 +747,8 @@ makes it fade to a darker color on hover, and turn the underline from white to b
   }
 
   .aboutme-image img {
-	max-width: 90%; /* Adjust the image size for mobile */
-	margin-bottom: 50px; /* Add some spacing between image and text */
+	max-width: 100%; /* Adjust the image size for mobile */
+	margin-bottom: 5px; /* Add some spacing between image and text */
   }
 }
 

@@ -753,99 +753,149 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 }
 
 
-/* GAMES & 3D, needa fix its late and im tired 
 
-.games3D-main {
-  box-sizing: border-box;
-}
 
-.games3D-container {
+
+
+/* GAMES & 3D */
+
+/* oh god this took so long gg's it looks aight 
+--IAN 2/2024 */
+
+
+
+
+.game-row-a {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  gap: 0.25%;
+  justify-content: center;
+  padding-bottom: 0.6%;
 }
 
-.games3D-main-image {
-  flex: 1;
-  max-width: 50%;
-  padding: 20px;
-}
-
-.games3D-main-image img {
-  max-width: 100%;
-  height: auto;
-}
-
-.games3D-sub-images {
-  flex: 1;
-  max-width: 50%;
+.game-row-b {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  padding: 20px;
+  gap: 0.3%;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 0.6%;
 }
 
-.games3D-sub-images img {
-  width: calc(33.33% - 10px);    Adjust the width based on your needs 
-  margin: 5px;
+.game-row-c {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-bottom: 0.6%;
 }
 
-@media screen and (max-width: 640px) {
-  .games3D-sub-images {
-    max-width: 100%;
-  }
-}
-*/ 
-
-
-@media screen and (max-width: 640px) {
-  .under-construction img {
-    max-width: 70%;
-  }
+.game-image-container {
+  flex: 1;
+  min-width: calc(30% - 10px);
 }
 
-
-/* NEW PAGE LAYOUT WITH BIG IMAGE AND SUB IMAGES (for games & 3D so far)
-*/ 
-
-.wide-layout {
-  display: grid;
-  grid-template-columns: 2fr 3fr; /* One-third for the big image, two-thirds for the sub-grid */
-  gap: 5px; /* Gap between columns */
-  align-items: stretch; /* Stretch items to the full height of the container */
-  margin-bottom: 20px;
+.game-image img {
+	width: 100%;
+	vertical-align: top;
+	object-fit: contain;
+	padding: 0px;
 }
 
-.main-image img {
-  width: 100%;
-  height: 100%; /* Make the big image fill the entire height of its container */
-  object-fit: cover; /* Ensure the image covers the entire container */
+	.games {
+	padding-bottom: 50px;
+	}
+
+/*hovering over the image (specifically within row and column), makes image change). */
+.game-image:hover {
+	z-index: 100;
+	transform: scale(1.01);
+	/*opacity: 50%;*/
+	filter: brightness(40%) grayscale(100%);
 }
 
-.sub-images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns for the sub-grid */
-  grid-template-rows: repeat(2, 1fr); /* Two rows of equal height */
-  gap: 5px; /* Gap between sub images */
-  align-items: stretch; /* Stretch items to the full height of the container */
+/* hovering over the image shows text!
+"when hovering over image, affect text in the following ways."
+affects text: makes 1.01 bigger, opacity becomes 1 (text has an ease transition further below).
+pointer events makes it so that the mouse doesn't turn into an "I" over the text, when mouse is over the image. */
+.game-image-container:hover .game-text {
+	transform: scale(1.01);
+	opacity: 1;
+	pointer-events: none;
 }
 
-.sub-images img {
-  width: 100%;
-  height: 100%; /* Make the sub-grid images fill the entire height of their container */
-  object-fit: cover; /* Ensure the images cover the entire container */
+.game-text {
+	color: white;
+	font-family: courier;
+	font-weight: 500;
+	opacity: 0;
+	position: absolute;
+	top: 44%;
+	width: 100%;
+	text-align: center;
+	transition: 0.3s ease;
+	z-index: 100;
+	font-size: 28px;
 }
 
-/* Media query for screens 640px or less */
+.game-image-container {
+	position: relative;
+}
+
+
+
+/* mobile styles!!! */
+
 @media screen and (max-width: 1024px) {
-  .wide-layout {
-    grid-template-columns: 1fr; /* Single column for smaller screens */
-    grid-template-rows: auto auto; /* Auto rows */
-    gap: 2.5px;
-  }
 
-  .sub-images {
-    grid-template-columns: repeat(2, 1fr); /* Back to two columns for smaller screens */
-    grid-template-rows: 1fr 1fr; /* Two rows of equal height */
-  }
+	.game-text {
+	  font-size: 32px;
+	}
+
+	.game-row-a {
+	  padding-left: 0px;
+	  padding-right: 0px;
+	  padding-bottom: 0px; 
+	}
+
+	.game-row-b {
+	  padding-left: 0px;
+	  padding-right: 0px;
+	  padding-bottom: 0px; 
+	}
+
+	.game-row-c {
+	  padding-left: 0px;
+	  padding-right: 0px;
+	  padding-bottom: 0px; 
+	}
+
+	.game-image-container {
+	  flex: 1;
+	  min-width: 100%;
+	  padding-bottom: 8px; 
+	}
+
+
+
+}
+
+@media screen and (max-width: 720px) {
+
+	.game-text {
+	  font-size: 32px;
+	}
+
+	.game-image-container {
+	  padding-bottom: 2px; 
+	}
+
+
 }
 
 
@@ -856,39 +906,30 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 
 
 
-.new-layout {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Four columns for the row of big images */
-  gap: 20px; /* Gap between big images */
-  align-items: start; /* Align items at the top */
+
+
+
+
+/* trying again weh 
+.game-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1%;
+  justify-content: center;
 }
 
-.main-image2 {
-  position: relative;
+.game-image img {
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+	object-fit: contain;
+	padding: 5px;
 }
 
-.main-image2 img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+.game-image {
+  flex: 1;
+  min-width: calc(30% - 10px);
+  padding-bottom: 3%; 
 }
-
-.sub-images2 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns for the sub-grid */
-  gap: 10px; /* Gap between sub-grid images */
-  align-items: start; /* Align items at the top */
-}
-
-.sub-images2 img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* Media query for screens 640px or less */
-@media screen and (max-width: 1024px) {
-  .new-layout {
-    grid-template-columns: 1fr; /* Single column for smaller screens */
-  }
-}
+*/

@@ -773,6 +773,14 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 /* GAMES & 3D */
 
 /* oh god this took so long gg's it looks aight 
+grid-row-a is for having any number of images (3 rn) side by side in one row taking up the whole width.
+grid-row-b is for having less images (2rn ) then defining padding on the left and right side so they just take up some space in the middle.
+grid-row-c is for having even less images (1rn) and defining even more padding.
+image sizes are dependent on how much padding there is.
+I know, it's bad. but I'm not a pro and it's working for what I need weh.
+~
+update, ended up putting them all on a-rows. b and c still work so if you wanna use em in the future go ahead.
+
 --IAN 2/2024 */
 
 
@@ -780,8 +788,7 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 
 .game-row-a {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-basis: calc((100% - 1px) / 4); /* 20px is the combined width of two gaps */
   gap: 0.5%;
   justify-content: center;
   padding-bottom: 0.6%;
@@ -810,7 +817,6 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 
 .game-image-container {
   flex: 1;
-  min-width: calc(30% - 10px);
 }
 
 .game-image img {
@@ -820,7 +826,7 @@ makes it fade to a darker color on hover, and turn the underline from white to b
 	padding: 0px;
 }
 
-	.games {
+.games {
 	padding-bottom: 50px;
 	}
 
@@ -871,6 +877,7 @@ pointer events makes it so that the mouse doesn't turn into an "I" over the text
 	}
 
 	.game-row-a {
+	  flex-wrap: wrap; /* new layout meant having row-a only wrap at a small enough screen. wrapping literally just makes it a single column as opposed to a single row. */
 	  padding-left: 0px;
 	  padding-right: 0px;
 	  padding-bottom: 0px; 
@@ -894,8 +901,6 @@ pointer events makes it so that the mouse doesn't turn into an "I" over the text
 	  padding-bottom: 8px; 
 	}
 
-
-
 }
 
 @media screen and (max-width: 720px) {
@@ -908,10 +913,104 @@ pointer events makes it so that the mouse doesn't turn into an "I" over the text
 	  padding-bottom: 2px; 
 	}
 
-
 }
 
 
 
 
 
+
+/* trying another one ahhhh
+	ended up not using though :O it flexes yeah but the images dont grow anympore and feel too stiff. 
+	gonna just stick with the old one, its not perfect but it looks nice enough.
+
+
+.models-container {
+  padding: 0px;
+  margin: 0px;
+}
+
+ul {
+  list-style: none;
+}
+
+/ Responsive image gallery rules begin /
+
+.models-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+  gap: 5px;
+}
+
+.models-gallery > li {
+/ flex-basis: calc((100% - 20px) / 3); 20px is the combined width of two gaps -- this forces 3 images per row but they don't overflow to the next line ;o;' /
+  flex-basis: 675px;
+  position: relative;
+  cursor: pointer;
+}
+
+/  makes the last images hug the left side instead of being centered,
+I like it centered tho.
+.models-gallery::after {
+  content: "";
+  flex-basis: 350px;
+}
+ /
+
+.models-gallery li img {
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.models-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(57, 57, 57, 0.502);
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition: all 0.2s 0.1s ease-in-out;
+  color: #fff;
+  border-radius: 5px;
+  /  center overlay text  /
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/  hover  /
+.models-gallery li:hover .overlay {
+  transform: scale(1);
+}
+
+*/
+
+/* 
+	old HTML for the new layout attempt:
+	<div class="models-container">
+      <ul class="models-gallery">
+        <li>
+          <img src="images/3D/a_1.jpg" alt="" />
+          <div class="models-overlay"><span>Image title</span></div>
+        </li>
+        <li>
+          <img src="images/3D/a_2.jpg" alt="" />
+          <div class="models-overlay"><span>Image title</span></div>
+        </li>
+        <li>
+          <img src="images/3D/a_3.jpg" alt="" />
+          <div class="models-overlay"><span>Image title</span></div>
+        </li>
+        <li>
+          <img src="images/3D/a_1.jpg" alt="" />
+          <div class="models-overlay"><span>Image title</span></div>
+        </li>
+      </ul>
+    </div>
+*/

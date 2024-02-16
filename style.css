@@ -326,25 +326,16 @@ making it so that for super wide screen the text column gets scooted towards the
 /* FADE IN STUFF AHHHSFUGHSHGFOUSGF */
 
 /* Apply initial transparency to the div elements */
-.image .fadein {
+.fadein {
   opacity: 0;
 }
+
 /* Apply the fade-in transition to the div elements */
-.image .fadein .fadein-active {
+.fadein-active {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
 
-
-/* load-in fade for 3D and games layouts*/
-.game-image .fadein {
-  opacity: 0;
-}
-/* Apply the fade-in transition to the div elements */
-.game-image .fadein .fadein-active {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-}
 
 
 

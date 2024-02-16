@@ -9,29 +9,6 @@
 	<title>Homepage</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 
-	<script>
-	  document.addEventListener("DOMContentLoaded", function() {
-		// Function to apply the fade-in effect
-		const applyFadeIn = function(img) {
-		  const parentDiv = img.parentElement;
-		  parentDiv.classList.add("fadein-active");
-		};
-
-		// Fade-in effect for images with class "fadein"
-		const fadeImages = document.querySelectorAll(".fadein img");
-
-		fadeImages.forEach(function(img) {
-		  if (img.complete) {
-			applyFadeIn(img);
-		  }
-
-		  img.addEventListener("load", function() {
-			applyFadeIn(img);
-		  });
-		});
-	  });
-	</script>
-
 </head>
 
 
@@ -250,6 +227,30 @@
 		<br> 
 
 	</div>
+
+
+		<script>
+	  document.addEventListener("DOMContentLoaded", function() {
+		// Function to apply the fade-in effect
+		const applyFadeIn = function(img) {
+		  const parentDiv = img.parentElement;
+		  parentDiv.classList.add("fadein-active");
+		};
+
+		// Fade-in effect for images with class "fadein"
+		const fadeImages = document.querySelectorAll(".fadein img");
+
+		fadeImages.forEach(function(img) {
+		  if (img.complete) {
+			applyFadeIn(img);
+		  }
+
+		  img.addEventListener("load", function() {
+			applyFadeIn(img);
+		  });
+		});
+	  });
+	</script>
 
 
 </body>

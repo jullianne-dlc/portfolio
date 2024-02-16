@@ -814,8 +814,8 @@ update, ended up putting them all on a-rows. b and c still work so if you wanna 
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding-left: 0%;
-  padding-right: 67%; /* bruh this is so improvised/brute-forced/scuffed to make the image hug the left asdgkh but whatever, optimized to fit one image but change it if you include more. */
+  padding-left: 33.5%;
+  padding-right: 33.5%; /* bruh this is so improvised/brute-forced/scuffed to make the image hug the left asdgkh but whatever, optimized to fit one image but change it if you include more. */
   padding-bottom: 0.6%;
 }
 

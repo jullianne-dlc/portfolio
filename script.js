@@ -10,18 +10,17 @@
         }
       };
 
-      // Fade-in effect for images with div.fadein
-      const fadeDivs = document.querySelectorAll(".image.fadein");
+      // Fade-in effect for elements with .fadein class
+      const fadeElements = document.querySelectorAll(".fadein");
 
-      fadeDivs.forEach(function(div) {
-        applyFadeIn(div);
+      fadeElements.forEach(function(element) {
+        applyFadeIn(element);
 
-        const img = div.querySelector("img");
-        img.addEventListener("load", function() {
-          applyFadeIn(div);
-        });
+        const img = element.querySelector("img");
+        if (img) {
+          img.addEventListener("load", function() {
+            applyFadeIn(element);
+          });
+        }
       });
     });
-
-
-});

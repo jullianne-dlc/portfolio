@@ -6,32 +6,31 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=4.0, minimum-scale=1.0, user-scalable=yes">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>3D models</title>
+	<title>3D Models</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-		  // Function to apply the fade-in effect
-		  const applyFadeIn = function(div) {
-			const img = div.querySelector("img");
-			if (img.complete) {
-			  div.classList.add("fadein-active");
-			}
-		  };
+	  document.addEventListener("DOMContentLoaded", function() {
+		// Function to apply the fade-in effect
+		const applyFadeIn = function(img) {
+		  const parentDiv = img.parentElement;
+		  parentDiv.classList.add("fadein-active");
+		};
 
-		  // Fade-in effect for images with div.fadein
-		  const fadeDivs = document.querySelectorAll(".image.fadein");
+		// Fade-in effect for images with class "fadein"
+		const fadeImages = document.querySelectorAll(".fadein img");
 
-		  fadeDivs.forEach(function(div) {
-			applyFadeIn(div);
+		fadeImages.forEach(function(img) {
+		  if (img.complete) {
+			applyFadeIn(img);
+		  }
 
-			const img = div.querySelector("img");
-			img.addEventListener("load", function() {
-			  applyFadeIn(div);
-			});
+		  img.addEventListener("load", function() {
+			applyFadeIn(img);
 		  });
 		});
-   </script>
+	  });
+	</script>
 
 </head>
 

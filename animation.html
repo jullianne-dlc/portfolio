@@ -60,32 +60,106 @@
 
 
 
+		<div class="games fadein-2">
 
-		<div class="awards fadein-2">
-			 
-			<div class="under-construction">
-				<img src="images/under_construction.gif">
+
+			<div class="game-row-d">
+	
+				<div class="game-image-container">
+
+					<div class="game-text">Soup</div>
+
+					<a href="art_soup.html">
+
+						<div class="game-image fadein">
+
+							<img src="images/index/b_1.gif">
+
+						</div>
+					</a>
+				</div>
+
+				<div class="game-image-container">
+
+					<div class="game-text">Ramen</div>
+
+					<a href="art_ramen.html">
+
+						<div class="game-image fadein">
+
+							<img src="images/index/b_6.gif">
+
+						</div>
+					</a>
+				</div>
+
 			</div>
 
-			<p> 
-				<br> <br>
-				Oops there's nothing here yet, sorry! Check back later. :P
-				<br>
-				In the meantime, these pages have some cool stuff:
-				<br> <br>
-			</p>
-			<h2>
-				<a href="index.html">"<u>Favorite Works</u>"</a> 
-				<br>
-				<a href="life-drawing.html">"<u>Life Drawing</u>"</a> 
-				<br>
-				<a href="about.html">"<u>About & Contact</u>"</a>
-			</h2>
-			
+
+			<div class="game-row-e">
+
+				<div class="game-image-container">
+
+					<div class="game-text">#cakeday</div>
+
+					<a href="art_cakeday.html">
+
+						<div class="game-image fadein">
+
+							<img src="images/index/d_2.gif">
+
+						</div>
+					</a>
+				</div>
+
+			    <div class="game-image-container">
+
+					<div class="game-text">Ti Red's Day Off</div>
+
+					<a href="art_ti-reds-day-off.html">
+
+						<div class="game-image fadein">
+
+							<img src="images/index/d_6.gif">
+
+						</div>
+					</a>
+			    </div>
+
+			</div>
+
+
 		</div>
 
-
+	
 	</div>
+
+
+	<script>
+	  document.addEventListener("DOMContentLoaded", function() {
+		// Function to apply the fade-in effect
+		const applyFadeIn = function(img) {
+		  const parentDiv = img.parentElement;
+		  parentDiv.classList.add("fadein-active");
+		};
+
+		// Fade-in effect for images with class "fadein"
+		const fadeImages = document.querySelectorAll(".fadein img");
+
+		fadeImages.forEach(function(img) {
+		  if (img.complete) {
+			applyFadeIn(img);
+		  }
+
+		  img.addEventListener("load", function() {
+			applyFadeIn(img);
+		  });
+		});
+	  });
+	</script>
+
+
+
 
 </body>
 

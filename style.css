@@ -819,6 +819,32 @@ update, ended up putting them all on a-rows. b and c still work so if you wanna 
   padding-bottom: 0.6%;
 }
 
+/* literally so scuffed lmao, this is for the animation page 'cause the images have two different sizes and there's two of each. */
+
+.game-row-d {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.6%;
+  justify-content: center;
+  padding-left: 23%;
+  padding-right: 23%; 
+  padding-bottom: 0.6%;
+}
+
+.game-row-e {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.6%;
+  justify-content: center;
+  padding-left: 18%;
+  padding-right: 18%; 
+  padding-bottom: 0.6%;
+}
+
+
+
 .game-image-container {
   flex: 1;
 }
@@ -894,6 +920,18 @@ pointer events makes it so that the mouse doesn't turn into an "I" over the text
 	}
 
 	.game-row-c {
+	  padding-left: 0px;
+	  padding-right: 0px;
+	  padding-bottom: 0px; 
+	}
+
+	.game-row-d {
+	  padding-left: 0px;
+	  padding-right: 0px;
+	  padding-bottom: 0px; 
+	}
+
+	.game-row-e {
 	  padding-left: 0px;
 	  padding-right: 0px;
 	  padding-bottom: 0px; 
